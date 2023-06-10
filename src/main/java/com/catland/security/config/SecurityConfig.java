@@ -1,7 +1,6 @@
 package com.catland.security.config;
 
 import com.catland.security.component.*;
-import com.macro.mall.tiny.security.component.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +12,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import javax.annotation.Resource;
+
 
 /**
  * SpringSecurity 5.4.x以上新用法配置
@@ -22,17 +23,17 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 public class SecurityConfig {
 
-    @Autowired
+    @Resource
     private IgnoreUrlsConfig ignoreUrlsConfig;
-    @Autowired
+    @Resource
     private RestfulAccessDeniedHandler restfulAccessDeniedHandler;
-    @Autowired
+    @Resource
     private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
-    @Autowired
+    @Resource
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
-    @Autowired
+    @Resource
     private DynamicSecurityService dynamicSecurityService;
-    @Autowired
+    @Resource
     private DynamicSecurityFilter dynamicSecurityFilter;
 
     @Bean

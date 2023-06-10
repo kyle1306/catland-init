@@ -13,10 +13,10 @@ import com.catland.modules.ums.service.UmsRoleService;
 import com.catland.modules.ums.mapper.UmsMenuMapper;
 import com.catland.modules.ums.mapper.UmsResourceMapper;
 import com.catland.modules.ums.mapper.UmsRoleMapper;
-import com.macro.mall.tiny.modules.ums.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -27,15 +27,15 @@ import java.util.List;
  */
 @Service
 public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole>implements UmsRoleService {
-    @Autowired
+    @Resource
     private UmsAdminCacheService adminCacheService;
-    @Autowired
+    @Resource
     private UmsRoleMenuRelationService roleMenuRelationService;
-    @Autowired
+    @Resource
     private UmsRoleResourceRelationService roleResourceRelationService;
-    @Autowired
+    @Resource
     private UmsMenuMapper menuMapper;
-    @Autowired
+    @Resource
     private UmsResourceMapper resourceMapper;
     @Override
     public boolean create(UmsRole role) {

@@ -1,7 +1,6 @@
 package com.catland.security.config;
 
 import com.catland.security.component.*;
-import com.macro.mall.tiny.security.component.*;
 import com.catland.security.util.JwtTokenUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

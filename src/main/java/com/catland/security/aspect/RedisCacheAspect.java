@@ -7,6 +7,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
@@ -24,7 +25,7 @@ import java.lang.reflect.Method;
 public class RedisCacheAspect {
     private static Logger LOGGER = LoggerFactory.getLogger(RedisCacheAspect.class);
 
-    @Pointcut("execution(public * com.macro.mall.tiny.service.*CacheService.*(..))")
+    @Pointcut("execution(public * com.catland.modules.ums.service.*CacheService.*(..))")
     public void cacheAspect() {
     }
 

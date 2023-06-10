@@ -27,10 +27,10 @@ public class SwaggerConfig extends BaseSwaggerConfig {
     @Override
     public SwaggerProperties swaggerProperties() {
         return SwaggerProperties.builder()
-                .apiBasePackage("com.macro.mall.tiny.modules")
-                .title("mall-tiny项目骨架")
-                .description("mall-tiny项目骨架相关接口文档")
-                .contactName("macro")
+                .apiBasePackage("com.catland.modules")
+                .title("catLand项目骨架")
+                .description("catLand项目骨架相关接口文档")
+                .contactName("kai")
                 .version("1.0")
                 .enableSecurity(true)
                 .build();

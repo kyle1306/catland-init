@@ -4,12 +4,12 @@ import com.catland.modules.ums.model.UmsResource;
 import com.catland.modules.ums.service.UmsAdminService;
 import com.catland.modules.ums.service.UmsResourceService;
 import com.catland.security.component.DynamicSecurityService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -22,9 +22,9 @@ import java.util.concurrent.ConcurrentHashMap;
 @Configuration
 public class MallSecurityConfig {
 
-    @Autowired
+    @Resource
     private UmsAdminService adminService;
-    @Autowired
+    @Resource
     private UmsResourceService resourceService;
 
     @Bean
