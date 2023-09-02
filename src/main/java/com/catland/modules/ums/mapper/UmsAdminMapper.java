@@ -12,13 +12,11 @@ import java.util.List;
  * </p>
  *
  * @author macro
- * @since 2020-08-21
+ * @since 2023-09-02
  */
 public interface UmsAdminMapper extends BaseMapper<UmsAdmin> {
-
     /**
      * 获取资源相关用户ID列表
      */
     List<Long> getAdminIdList(@Param("resourceId") Long resourceId);
-
 }

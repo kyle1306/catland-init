@@ -1,14 +1,14 @@
 package com.catland.modules.ums.model;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.util.Date;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * <p>
@@ -16,15 +16,15 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author macro
- * @since 2020-08-21
+ * @since 2023-09-02
  */
-@Data
-@EqualsAndHashCode(callSuper = false)
+@Getter
+@Setter
 @TableName("ums_admin")
-@ApiModel(value="UmsAdmin对象", description="后台用户表")
+@ApiModel(value = "UmsAdmin对象", description = "后台用户表")
 public class UmsAdmin implements Serializable {
 
-    private static final long serialVersionUID=1L;
+    private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
@@ -33,26 +33,32 @@ public class UmsAdmin implements Serializable {
 
     private String password;
 
-    @ApiModelProperty(value = "头像")
+    @ApiModelProperty("头像")
     private String icon;
 
-    @ApiModelProperty(value = "邮箱")
+    @ApiModelProperty("邮箱")
     private String email;
 
-    @ApiModelProperty(value = "昵称")
+    @ApiModelProperty("昵称")
     private String nickName;
 
-    @ApiModelProperty(value = "备注信息")
+    @ApiModelProperty("备注信息")
     private String note;
 
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty("创建时间")
     private Date createTime;
 
-    @ApiModelProperty(value = "最后登录时间")
+    @ApiModelProperty("最后登录时间")
     private Date loginTime;
 
-    @ApiModelProperty(value = "帐号启用状态：0->禁用；1->启用")
+    @ApiModelProperty("帐号启用状态：0->禁用；1->启用")
     private Integer status;
+
+    @ApiModelProperty("玩家ID")
+    private String playerId;
+
+    @ApiModelProperty("人格类型")
+    private String personalityCode;
 
 
 }
