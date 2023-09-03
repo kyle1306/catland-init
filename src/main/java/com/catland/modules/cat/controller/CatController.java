@@ -17,5 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/cat/cat")
 public class CatController {
 
+    // TODO: 2023/9/3 根据猫品种初始化一只猫
+
+
 }
 
