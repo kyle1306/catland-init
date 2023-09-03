@@ -22,6 +22,15 @@ public enum PersonalityIndexEnum {
     JUDGMENT(7, 4, "判断", 'J'),
     PERCEIVING(8, 4, "理解", 'P');
 
+    public static PersonalityIndexEnum getPersonalityIndex(Integer type) {
+        for (PersonalityIndexEnum indexEnum : PersonalityIndexEnum.values()) {
+            if (indexEnum.getType() == type) {
+                return indexEnum;
+            }
+        }
+        return null;
+    }
+
     private int type;
     private int dimension;
     private String typeName;

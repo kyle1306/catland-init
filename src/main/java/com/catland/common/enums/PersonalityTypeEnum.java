@@ -19,6 +19,16 @@ public enum PersonalityTypeEnum {
     INTJ("INTJ", "建筑师型人格");
     // TODO: 2023/8/20 添加其他枚举值
 
+
+    public static PersonalityTypeEnum getPersonalityByCode(String code) {
+        for (PersonalityTypeEnum value : PersonalityTypeEnum.values()) {
+            if (value.getCode().equals(code)) {
+                return value;
+            }
+        }
+        return null;
+    }
+
     private String code;
     private String name;
 }
