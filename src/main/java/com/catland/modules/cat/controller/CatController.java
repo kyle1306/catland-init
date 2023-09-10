@@ -34,6 +34,7 @@ public class CatController {
     public CommonResult<String> recommendCat(AdoptRequest request) {
         log.info("CatController recommendCat request {}", GsonUtil.toJson(request));
         // TODO: 2023/9/10 绑定人和猫关系，初始化猫实例
+        // 昵称默认空字符串 性别随机 毛色枚举值随机
 
         return CommonResult.success("");
     }
