@@ -44,7 +44,6 @@ public class PersonalityQuestionController {
     @PostMapping("result")
     @ResponseBody
     public CommonResult<PersonalityResultDTO> personalityResult(@RequestBody List<PerAnswerRequest> requestList) {
-        // TODO: 2023/9/2 其他参数校验
         if (CollectionUtils.isEmpty(requestList)) {
             return CommonResult.validateFailed("答题结果为空");
         }
