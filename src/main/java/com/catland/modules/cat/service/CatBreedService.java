@@ -1,7 +1,10 @@
 package com.catland.modules.cat.service;
 
+import com.catland.modules.cat.dto.CatBreedDTO;
 import com.catland.modules.cat.model.CatBreed;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface CatBreedService extends IService<CatBreed> {
 
+    List<CatBreedDTO> selectBreedList(List<Integer> catPerList);
 }

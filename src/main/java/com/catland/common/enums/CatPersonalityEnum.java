@@ -23,4 +23,13 @@ public enum CatPersonalityEnum {
     private int type;
     private String typeName;
     private String desc;
+
+    public static CatPersonalityEnum getCatPersonality(Integer type) {
+        for (CatPersonalityEnum catPersonality : CatPersonalityEnum.values()) {
+            if (catPersonality.getType() == type) {
+                return catPersonality;
+            }
+        }
+        return null;
+    }
 }
