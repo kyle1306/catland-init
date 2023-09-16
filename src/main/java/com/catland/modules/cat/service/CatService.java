@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface CatService extends IService<Cat> {
 
+    String create(Integer breedType);
 }

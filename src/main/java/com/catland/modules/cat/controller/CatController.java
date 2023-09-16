@@ -3,9 +3,9 @@ package com.catland.modules.cat.controller;
 
 import com.catland.common.api.CommonResult;
 import com.catland.common.utils.GsonUtil;
+import com.catland.modules.cat.dto.AdoptCatResponse;
 import com.catland.modules.cat.dto.AdoptRequest;
-import com.catland.modules.cat.dto.RecommendRequest;
-import com.catland.modules.cat.dto.RecommendResponse;
+import com.catland.modules.cat.service.CatService;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import java.util.Objects;
 
 /**
  * <p>
@@ -23,20 +26,22 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-09-02
  */
 @RestController
-@RequestMapping("/cat/cat")
+@RequestMapping("/cat")
 @Slf4j
 public class CatController {
+    @Resource
+    private CatService catService;
 
-    // TODO: 2023/9/3 根据猫品种初始化一只猫
     @PostMapping("adopt")
     @ApiOperation(value = "根据猫品种领养一只猫")
     @ResponseBody
-    public CommonResult<String> recommendCat(AdoptRequest request) {
+    public CommonResult<AdoptCatResponse> adoptCat(AdoptRequest request) {
         log.info("CatController recommendCat request {}", GsonUtil.toJson(request));
-        // TODO: 2023/9/10 绑定人和猫关系，初始化猫实例
-        // 昵称默认空字符串 性别随机 毛色枚举值随机
-
-        return CommonResult.success("");
+        if (Objects.isNull(request.getBreedType())) {
+            return CommonResult.validateFailed("需要提供猫咪品种");
+        }
+        String catId = catService.create(request.getBreedType());
+        return CommonResult.success(AdoptCatResponse.builder().catId(catId).build());
     }
 
 }

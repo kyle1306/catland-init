@@ -6,7 +6,7 @@
     <resultMap id="BaseResultMap" type="com.catland.modules.cat.model.Cat">
         <id column="id" property="id" />
         <result column="cat_id" property="catId" />
-        <result column="breed_id" property="breedId" />
+        <result column="breed_id" property="breedType" />
         <result column="player_id" property="playerId" />
         <result column="nick_name" property="nickName" />
         <result column="birth_date" property="birthDate" />
@@ -25,6 +25,8 @@
         <result column="satiety_value" property="satietyValue" />
         <result column="health_value" property="healthValue" />
         <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
     </resultMap>
 
 </mapper>

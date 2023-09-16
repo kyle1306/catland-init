@@ -30,10 +30,10 @@ public class Cat implements Serializable {
     private Long id;
 
     @ApiModelProperty("猫的唯一标识")
-    private Long catId;
+    private String catId;
 
-    @ApiModelProperty("品种ID")
-    private Long breedId;
+    @ApiModelProperty("猫品种")
+    private Integer breedType;
 
     @ApiModelProperty("玩家ID")
     private Long playerId;
@@ -89,5 +89,10 @@ public class Cat implements Serializable {
     @ApiModelProperty("猫的状态，枚举值")
     private Integer status;
 
+    @ApiModelProperty("创建时间")
+    private Date createTime;
+
+    @ApiModelProperty("更新时间")
+    private Date updateTime;
 
 }
