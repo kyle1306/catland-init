@@ -39,7 +39,6 @@ public class PersonalityQuestionController {
         return CommonResult.success(questionList);
     }
 
-    // TODO: 2023/9/2 通过测试结果，更新用户性格，同时返回性格结果
     @ApiOperation(value = "根据答题结果返回性格结果")
     @PostMapping("result")
     @ResponseBody

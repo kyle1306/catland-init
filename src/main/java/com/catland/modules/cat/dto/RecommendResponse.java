@@ -18,5 +18,5 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class RecommendResponse implements Serializable {
-    private List<CatBreedDTO> breedDTOList;
+    private List<CatBreedDTO> catBreedList;
 }

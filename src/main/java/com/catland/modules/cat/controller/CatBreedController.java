@@ -12,11 +12,7 @@ import com.google.common.base.Strings;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -40,14 +36,14 @@ public class CatBreedController {
     @PostMapping("recommend")
     @ApiOperation(value = "根据性格类型推荐猫类型")
     @ResponseBody
-    public CommonResult<RecommendResponse> recommendCat(RecommendRequest request) {
+    public CommonResult<RecommendResponse> recommendCat(@RequestBody RecommendRequest request) {
         log.info("CatBreedController.recommendCat req {}", GsonUtil.toJson(request));
         if (Objects.isNull(request) || Strings.isNullOrEmpty(request.getHumanPersonality())) {
             return CommonResult.validateFailed("性格类型不能为空");
         }
 
         List<CatBreedDTO> resultList = recommendService.queryCatBreed(request.getHumanPersonality());
-        RecommendResponse response = RecommendResponse.builder().breedDTOList(resultList).build();
+        RecommendResponse response = RecommendResponse.builder().catBreedList(resultList).build();
         log.info("CatBreedController.recommendCat personality {} response {}", request.getHumanPersonality(), GsonUtil.toJson(response));
         return CommonResult.success(response);
     }

@@ -15,6 +15,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -38,7 +39,7 @@ public class CatBreedServiceImpl extends ServiceImpl<CatBreedMapper, CatBreed> i
         }
 
         QueryWrapper<CatBreed> wrapper = new QueryWrapper<>();
-        wrapper.lambda().eq(CatBreed::getPersonalityType, catPerList);
+        wrapper.lambda().in(CatBreed::getPersonalityType, catPerList);
         List<CatBreed> breedList = list(wrapper);
         if (breedList.size() <= 3) {
             return breedList.stream().map(v -> {
