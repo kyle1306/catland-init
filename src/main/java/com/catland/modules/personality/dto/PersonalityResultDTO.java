@@ -22,7 +22,6 @@ public class PersonalityResultDTO {
 
     public static PersonalityResultDTO convertDTO(PersonalityTypeEnum personality) {
         PersonalityResultDTO.PersonalityResultDTOBuilder builder = PersonalityResultDTO.builder();
-        PersonalityResultDTO resultDTO = builder.code(personality.getCode()).name(personality.name()).build();
-        return resultDTO;
+        return builder.code(personality.getCode()).name(personality.getName()).build();
     }
 }

@@ -88,9 +88,9 @@ public class PersonalityQuestionServiceImpl extends ServiceImpl<PersonalityQuest
             log.error("queryPersonality error. cannot find login user");
             throw new ApiException("无法获取登录用户信息");
         }
-        // TODO: 2023/9/2 更新玩家人格类型
+
         UmsAdmin umsAdmin = adminUser.getUmsAdmin();
-        umsAdmin.setPersonalityCode(personalityCode);
+        umsAdmin.setPersonalityCode(personality.getCode());
         adminService.update(umsAdmin.getId(), umsAdmin);
         return PersonalityResultDTO.convertDTO(personality);
     }
