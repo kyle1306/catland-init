@@ -6,7 +6,9 @@ import com.catland.common.utils.GsonUtil;
 import com.catland.modules.cat.dto.AdoptCatResponse;
 import com.catland.modules.cat.dto.AdoptRequest;
 import com.catland.modules.cat.service.CatService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +25,8 @@ import java.util.Objects;
  */
 @RestController
 @RequestMapping("/cat")
+@Api(tags = "CatController")
+@Tag(name = "CatController", description = "猫咪管理")
 @Slf4j
 public class CatController {
     @Resource

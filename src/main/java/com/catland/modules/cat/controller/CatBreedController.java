@@ -9,7 +9,9 @@ import com.catland.modules.cat.dto.RecommendResponse;
 import com.catland.modules.cat.service.CatHumanRelateService;
 import com.catland.modules.cat.service.CatRecommendService;
 import com.google.common.base.Strings;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +29,8 @@ import java.util.Objects;
  * @since 2023-09-02
  */
 @RestController
+@Api(tags = "CatBreedController")
+@Tag(name = "CatBreedController", description = "猫品种管理")
 @RequestMapping("/cat/catBreed")
 @Slf4j
 public class CatBreedController {

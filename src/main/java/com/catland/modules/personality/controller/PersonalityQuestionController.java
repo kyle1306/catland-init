@@ -8,7 +8,9 @@ import com.catland.modules.personality.dto.PerQuestionDTO;
 import com.catland.modules.personality.dto.PersonalityResultDTO;
 import com.catland.modules.personality.model.PersonalityQuestion;
 import com.catland.modules.personality.service.PersonalityQuestionService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,6 +25,8 @@ import java.util.List;
  * @since 2023-08-19
  */
 @RestController
+@Api(tags = "PersonalityQuestionController")
+@Tag(name = "PersonalityQuestionController", description = "性格测试题管理")
 @RequestMapping("/personality/personalityQuestion")
 public class PersonalityQuestionController {
     @Resource
