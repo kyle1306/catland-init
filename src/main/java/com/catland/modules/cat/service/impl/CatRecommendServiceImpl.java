@@ -37,4 +37,9 @@ public class CatRecommendServiceImpl implements CatRecommendService {
 
         return catBreedService.selectBreedList(catPerList);
     }
+
+    @Override
+    public List<CatBreedDTO> randomCatBreed() {
+        return catBreedService.randomCatBreed();
+    }
 }

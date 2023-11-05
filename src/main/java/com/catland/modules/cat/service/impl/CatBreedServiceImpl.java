@@ -60,4 +60,15 @@ public class CatBreedServiceImpl extends ServiceImpl<CatBreedMapper, CatBreed> i
             return catBreedDTO;
         }).collect(Collectors.toList());
     }
+
+    @Override
+    public List<CatBreedDTO> randomCatBreed() {
+        QueryWrapper<CatBreed> wrapper = new QueryWrapper<>();
+        List<CatBreed> breedList = this.getBaseMapper().selectList(wrapper);
+        int randIndex = RandomUtils.nextInt(0, breedList.size());
+        CatBreed catBreed = breedList.get(randIndex);
+        CatBreedDTO catBreedDTO = new CatBreedDTO();
+        BeanUtils.copyProperties(catBreed, catBreedDTO);
+        return Lists.newArrayList(catBreedDTO);
+    }
 }

@@ -52,5 +52,17 @@ public class CatBreedController {
         return CommonResult.success(response);
     }
 
+
+    @PostMapping("random")
+    @ApiOperation(value = "随机推荐一个猫类型")
+    @ResponseBody
+    public CommonResult<RecommendResponse> randomCat() {
+        log.info("CatBreedController.randomCat random start.");
+        // 随机一个猫品种
+        List<CatBreedDTO> resultList = recommendService.randomCatBreed();
+        RecommendResponse response = RecommendResponse.builder().catBreedList(resultList).build();
+        log.info("CatBreedController.randomCat response {}", GsonUtil.toJson(response));
+        return CommonResult.success(response);
+    }
 }
 

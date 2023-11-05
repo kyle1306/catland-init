@@ -17,4 +17,6 @@ import java.util.List;
 public interface CatBreedService extends IService<CatBreed> {
 
     List<CatBreedDTO> selectBreedList(List<Integer> catPerList);
+
+    List<CatBreedDTO> randomCatBreed();
 }

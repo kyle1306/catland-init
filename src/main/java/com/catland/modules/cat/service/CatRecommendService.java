@@ -11,4 +11,6 @@ import java.util.List;
  */
 public interface CatRecommendService {
     List<CatBreedDTO> queryCatBreed(String humanPersonality);
+
+    List<CatBreedDTO> randomCatBreed();
 }
